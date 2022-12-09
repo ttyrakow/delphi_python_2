@@ -1,0 +1,59 @@
+object FMainForm: TFMainForm
+  Left = 0
+  Top = 0
+  Caption = 'ToDo List'
+  ClientHeight = 480
+  ClientWidth = 561
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  DesignerMasterStyle = 0
+  object Label1: TLabel
+    Position.X = 16.000000000000000000
+    Position.Y = 11.000000000000000000
+    Text = 'Item:'
+    TabOrder = 0
+  end
+  object itemEdit: TEdit
+    Touch.InteractiveGestures = [LongTap, DoubleTap]
+    Anchors = [akLeft, akTop, akRight]
+    TabOrder = 1
+    Position.X = 144.000000000000000000
+    Position.Y = 8.000000000000000000
+    Size.Width = 281.000000000000000000
+    Size.Height = 22.000000000000000000
+    Size.PlatformDefault = False
+  end
+  object addButton: TButton
+    Anchors = [akTop, akRight]
+    Position.X = 464.000000000000000000
+    Position.Y = 8.000000000000000000
+    TabOrder = 2
+    Text = 'Add'
+    OnClick = addButtonClick
+  end
+  object todoList: TListBox
+    Anchors = [akLeft, akTop, akRight, akBottom]
+    PopupMenu = todoListMenu
+    Position.X = 80.000000000000000000
+    Position.Y = 88.000000000000000000
+    Size.Width = 401.000000000000000000
+    Size.Height = 313.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 3
+    DisableFocusEffect = True
+    DefaultItemStyles.ItemStyle = ''
+    DefaultItemStyles.GroupHeaderStyle = ''
+    DefaultItemStyles.GroupFooterStyle = ''
+    Viewport.Width = 397.000000000000000000
+    Viewport.Height = 309.000000000000000000
+  end
+  object todoListMenu: TPopupMenu
+    Left = 304
+    Top = 168
+    object deleteItem: TMenuItem
+      Text = 'Delete item'
+      OnClick = deleteItemClick
+    end
+  end
+end
